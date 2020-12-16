@@ -7,6 +7,15 @@
   <groupId>com.kgc.kmall</groupId>
   <artifactId>kmall-parent</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.5.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
 
   <name>kmall-parent</name>
   <!-- FIXME change it to the project's website -->
@@ -17,6 +26,9 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
       <mybatis.version>2.1.2</mybatis.version>
+    <dubbo.spring.boot.starter.version>2.7.1</dubbo.spring.boot.starter.version>
+    <dubbo.version>2.7.1</dubbo.version>
+    <dubbo.dependencies.zookeeper.version>2.7.1</dubbo.dependencies.zookeeper.version>
   </properties>
 
   <dependencyManagement>
@@ -25,6 +37,23 @@
         <groupId>org.mybatis.spring.boot</groupId>
         <artifactId>mybatis-spring-boot-starter</artifactId>
         <version>${mybatis.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>dubbo-spring-boot-starter</artifactId>
+        <version>${dubbo.spring.boot.starter.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>${dubbo.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>dubbo-dependencies-zookeeper</artifactId>
+        <version>${dubbo.dependencies.zookeeper.version}</version>
+        <type>pom</type>
       </dependency>
     </dependencies>
   </dependencyManagement>
